@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+	<body>
+		<table>
+		
+			<tr>
+				<td>
+					Nama	
+				</td>
+				<td>
+					<%= @data.nama %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Deskipsi
+				</td>
+				<td>
+					<%= @data.deskripsi %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Harga
+				</td>
+				<td>
+					<%= @data.harga %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<%= link_to 'Edit',edit_item_path(@data)%>
+				</td>
+			</tr>
+
+		</table>
+
+		<%= render 'info',popular_item: @data.nama%>
+	</body>
+</html>

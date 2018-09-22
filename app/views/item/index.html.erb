@@ -1,0 +1,36 @@
+<% if flash[:notice].present? %>
+	<%= flash[:notice] %>
+	<br/>
+<% end %>
+
+
+<%= link_to 'Create',new_item_path(@data) %>
+
+<table>
+	<tr>
+		<td>
+			Nama
+			
+		</td>
+		<td>
+			Profile
+		</td>
+		<td>
+			Delete
+		</td>
+	</tr>
+	<% @data.each do |s|%>
+	<tr>
+		<td>
+			<%= s.nama %>
+		</td>
+		<td>
+			<%= link_to 'Profile',item_path(s) %>
+		</td>
+		<td>
+			<%=link_to 'Delete',item_path(s),method: :delete,data: {confirm: 'Are you sure ?'}%>
+		</td>
+	</tr>
+	<% end%>
+</table>
+<%= render 'info',popular_item: "Ihdinas"%>	

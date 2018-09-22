@@ -1,0 +1,45 @@
+<%= form_for @data, url:toko_index_path(@data) do |x| %>
+	<table>
+		<tr>
+			<td>
+				<%= x.label :Nama %>
+			</td>
+			<td>
+				<%= x.text_field :nama_toko %>
+			</td>
+			<td>
+				<% if @data.errors[:nama_toko].any? %>
+					<% @data.errors[:nama_toko].each do |x| %>
+						<%= x %>
+					<% end %>
+				<% end %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= x.label :alamat %>
+			</td>
+			<td>
+				<%= x.text_area :alamat_toko %>
+			</td>
+			<td>
+				<% if @data.errors[:nama_toko].any? %>
+					<% @data.errors[:nama_toko].each do |x| %>
+						<%= x %>
+					<% end %>
+				<% end %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= x.label :NoTelp %>
+			</td>
+			<td>
+				<%= x.text_field :no_telp  %>
+			</td>
+		</tr>
+		<tr>
+			<td rowspan="2"> <%= x.submit "Kirim"%></td>
+		</tr>
+	</table>	
+<% end %>

@@ -1,0 +1,58 @@
+<%= form_for @data, url:item_index_path(@data) do |i| %>
+	
+	<table>
+		<tr>
+			<td>
+				<%= i.label :nama%>
+			</td>
+			<td>
+				<%= i.text_field :nama%>`
+			</td>
+			<td>
+				
+				<span style="color:red">
+					<% if @data.errors[:nama].any? %>
+					<%= @data.errors[:nama].first %>
+				<% end %>
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= i.label :deskripsi%>
+			</td>
+			<td>
+				<%= i.text_area :deskripsi%>`
+			</td>
+			<td>
+				<span style="color:red">
+					<% if @data.errors[:deskripsi].any? %>
+					<%= @data.errors[:deskripsi].first %>
+				<% end %>
+				</span>
+			</td>
+
+		</tr>
+		<tr>
+			<td>
+				<%= i.label :Harga%>
+			</td>
+			<td>
+				<%= i.text_field :harga%>`
+			</td>
+			<td>
+				<span style="color:red">
+					<% if @data.errors[:harga].any? %>
+					<%= @data.errors[:harga].first %>
+				<% end %>
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<%= i.submit "Kirim"%>
+			</td>
+		</tr>
+	</table>
+
+<% end %>

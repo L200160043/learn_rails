@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Profile
+	</title>
+</head>
+<body>
+	<% if flash[:notice].present? %>
+	<%= flash[:notice] %>
+	<br/>
+	<% end %>
+	
+	
+	<%= link_to 'Create Porifle',new_toko_path(@data)%>
+	<table>
+		<tr>
+			<td>
+				Nama
+			</td>
+			<td>
+				Alamat
+			</td>
+			<td>
+				No Telp
+			</td>
+		</tr>
+		<% @data.each do |x|%>
+		<tr>
+			<td>
+				<%= x.nama_toko %>
+			</td>
+			<td>
+				<%= x.alamat_toko %>
+			</td>
+			<td>
+				<%= x.no_telp %>
+			</td>
+			<td>
+				<%= link_to 'Edit',edit_toko_path(x) %>
+			</td>
+			<td>
+				<%=link_to 'Delete',toko_path(x),method: :delete,data: {confirm: 'Are you sure ?'}%>
+				
+
+			</td>
+
+		</tr>
+		<% end %>
+	</table>
+
+</body>
+</html>r
